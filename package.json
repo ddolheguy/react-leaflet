@@ -1,5 +1,5 @@
 {
-  "name": "react-leaflet-cordova",
+  "name": "react-leaflet",
   "version": "0.12.1",
   "description": "React components for Leaflet maps - with Cordova SqlLite Leaflet plugin added",
   "main": "lib/index.js",

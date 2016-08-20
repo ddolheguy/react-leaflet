@@ -13,6 +13,7 @@ export default class CordovaSqlTileLayer extends BaseTileLayer {
   componentWillMount () {
     super.componentWillMount()
     const { db, ...props } = this.props
+    console.log('React-Leaflet - mounting sql ');
     this.leafletElement = tileLayer.cordovaSql(db, props)
   }
 }

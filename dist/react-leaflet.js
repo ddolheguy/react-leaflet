@@ -59,7 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.setIconDefaultImagePath = exports.ZoomControl = exports.WMSTileLayer = exports.TileLayer = exports.ScaleControl = exports.Rectangle = exports.Popup = exports.Polyline = exports.Polygon = exports.Path = exports.MultiPolyline = exports.MultiPolygon = exports.Marker = exports.MapLayer = exports.MapControl = exports.MapComponent = exports.Map = exports.LayersControl = exports.LayerGroup = exports.ImageOverlay = exports.GeoJson = exports.FeatureGroup = exports.CircleMarker = exports.Circle = exports.CanvasTileLayer = exports.BaseTileLayer = exports.AttributionControl = exports.PropTypes = undefined;
+	exports.setIconDefaultImagePath = exports.ZoomControl = exports.WMSTileLayer = exports.CordovaSqlTileLayer = exports.TileLayer = exports.ScaleControl = exports.Rectangle = exports.Popup = exports.Polyline = exports.Polygon = exports.Path = exports.MultiPolyline = exports.MultiPolygon = exports.Marker = exports.MapLayer = exports.MapControl = exports.MapComponent = exports.Map = exports.LayersControl = exports.LayerGroup = exports.ImageOverlay = exports.GeoJson = exports.FeatureGroup = exports.CircleMarker = exports.Circle = exports.CanvasTileLayer = exports.BaseTileLayer = exports.AttributionControl = exports.PropTypes = undefined;
 
 	var _leafletCordova = __webpack_require__(1);
 
@@ -165,11 +165,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _TileLayer3 = _interopRequireDefault(_TileLayer2);
 
-	var _WMSTileLayer2 = __webpack_require__(110);
+	var _CordovaSqlTileLayer2 = __webpack_require__(110);
+
+	var _CordovaSqlTileLayer3 = _interopRequireDefault(_CordovaSqlTileLayer2);
+
+	var _WMSTileLayer2 = __webpack_require__(111);
 
 	var _WMSTileLayer3 = _interopRequireDefault(_WMSTileLayer2);
 
-	var _ZoomControl2 = __webpack_require__(111);
+	var _ZoomControl2 = __webpack_require__(112);
 
 	var _ZoomControl3 = _interopRequireDefault(_ZoomControl2);
 
@@ -202,6 +206,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Rectangle = _Rectangle3.default;
 	exports.ScaleControl = _ScaleControl3.default;
 	exports.TileLayer = _TileLayer3.default;
+	exports.CordovaSqlTileLayer = _CordovaSqlTileLayer3.default;
 	exports.WMSTileLayer = _WMSTileLayer3.default;
 	exports.ZoomControl = _ZoomControl3.default;
 	var setIconDefaultImagePath = exports.setIconDefaultImagePath = function setIconDefaultImagePath(path) {
@@ -14422,6 +14427,69 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var CordovaSqlTileLayer = function (_BaseTileLayer) {
+	  _inherits(CordovaSqlTileLayer, _BaseTileLayer);
+
+	  function CordovaSqlTileLayer() {
+	    _classCallCheck(this, CordovaSqlTileLayer);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CordovaSqlTileLayer).apply(this, arguments));
+	  }
+
+	  _createClass(CordovaSqlTileLayer, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      _get(Object.getPrototypeOf(CordovaSqlTileLayer.prototype), 'componentWillMount', this).call(this);
+	      var _props = this.props;
+	      var db = _props.db;
+
+	      var props = _objectWithoutProperties(_props, ['db']);
+
+	      console.log('React-Leaflet - mounting sql');
+	      this.leafletElement = _leafletCordova.tileLayer.cordovaSql(db, props);
+	    }
+	  }]);
+
+	  return CordovaSqlTileLayer;
+	}(_BaseTileLayer3.default);
+
+	CordovaSqlTileLayer.propTypes = {
+	  db: _react.PropTypes.object.isRequired
+	};
+	exports.default = CordovaSqlTileLayer;
+
+/***/ },
+/* 111 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+	var _leafletCordova = __webpack_require__(1);
+
+	var _react = __webpack_require__(4);
+
+	var _BaseTileLayer2 = __webpack_require__(14);
+
+	var _BaseTileLayer3 = _interopRequireDefault(_BaseTileLayer2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var WMSTileLayer = function (_BaseTileLayer) {
 	  _inherits(WMSTileLayer, _BaseTileLayer);
 
@@ -14453,7 +14521,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = WMSTileLayer;
 
 /***/ },
-/* 111 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

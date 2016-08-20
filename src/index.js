@@ -26,6 +26,7 @@ export Popup from './Popup'
 export Rectangle from './Rectangle'
 export ScaleControl from './ScaleControl'
 export TileLayer from './TileLayer'
+export CordovaSqlTileLayer from './CordovaSqlTileLayer'
 export WMSTileLayer from './WMSTileLayer'
 export ZoomControl from './ZoomControl'
 

@@ -1,6 +1,6 @@
 /* @flow */
 
-import { control } from 'leaflet'
+import { control } from 'leaflet-cordova'
 import React, { cloneElement, Children, Component, PropTypes } from 'react'
 
 import childrenType from './types/children'

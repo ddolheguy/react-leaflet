@@ -1,6 +1,6 @@
 /* @flow */
 
-import { polygon } from 'leaflet'
+import { polygon } from 'leaflet-cordova'
 import { PropTypes } from 'react'
 
 import latlngListType from './types/latlngList'

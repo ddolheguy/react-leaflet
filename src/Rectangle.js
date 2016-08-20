@@ -1,6 +1,6 @@
 /* @flow */
 
-import { rectangle } from 'leaflet'
+import { rectangle } from 'leaflet-cordova'
 
 import boundsType from './types/bounds'
 import Path from './Path'

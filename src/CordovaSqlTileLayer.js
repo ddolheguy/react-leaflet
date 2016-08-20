@@ -5,14 +5,14 @@ import { PropTypes } from 'react'
 
 import BaseTileLayer from './BaseTileLayer'
 
-export default class WMSTileLayer extends BaseTileLayer {
+export default class CordovaSqlTileLayer extends BaseTileLayer {
   static propTypes = {
-    url: PropTypes.string.isRequired,
+    db: PropTypes.object.isRequired,
   };
 
   componentWillMount () {
     super.componentWillMount()
-    const { url, ...props } = this.props
-    this.leafletElement = tileLayer.wms(url, props)
+    const { db, ...props } = this.props
+    this.leafletElement = tileLayer.cordovaSql(db, props)
   }
 }

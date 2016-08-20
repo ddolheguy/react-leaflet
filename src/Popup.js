@@ -1,6 +1,6 @@
 /* @flow */
 
-import { popup } from 'leaflet'
+import { popup } from 'leaflet-cordova'
 import { Children, PropTypes } from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 

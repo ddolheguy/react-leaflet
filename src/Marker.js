@@ -1,6 +1,6 @@
 /* @flow */
 
-import { Icon, marker } from 'leaflet'
+import { Icon, marker } from 'leaflet-cordova'
 import { PropTypes } from 'react'
 
 import latlngType from './types/latlng'

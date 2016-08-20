@@ -1,6 +1,6 @@
 /* @flow */
 
-import { featureGroup } from 'leaflet'
+import { featureGroup } from 'leaflet-cordova'
 import { PropTypes } from 'react'
 
 import layerContainerType from './types/layerContainer'

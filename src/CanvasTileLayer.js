@@ -1,6 +1,6 @@
 /* @flow */
 
-import { tileLayer } from 'leaflet'
+import { tileLayer } from 'leaflet-cordova'
 
 import BaseTileLayer from './BaseTileLayer'
 

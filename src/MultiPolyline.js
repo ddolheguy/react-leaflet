@@ -1,6 +1,6 @@
 /* @flow */
 
-import { multiPolyline } from 'leaflet'
+import { multiPolyline } from 'leaflet-cordova'
 import { PropTypes } from 'react'
 
 import latlngListType from './types/latlngList'

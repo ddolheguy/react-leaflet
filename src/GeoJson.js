@@ -1,6 +1,6 @@
 /* @flow */
 
-import { geoJson } from 'leaflet'
+import { geoJson } from 'leaflet-cordova'
 import { isFunction } from 'lodash'
 import { PropTypes } from 'react'
 

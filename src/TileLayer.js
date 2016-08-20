@@ -1,6 +1,6 @@
 /* @flow */
 
-import { tileLayer } from 'leaflet'
+import { tileLayer } from 'leaflet-cordova'
 import { PropTypes } from 'react'
 
 import BaseTileLayer from './BaseTileLayer'

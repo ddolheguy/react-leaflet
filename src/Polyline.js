@@ -1,6 +1,6 @@
 /* @flow */
 
-import { polyline } from 'leaflet'
+import { polyline } from 'leaflet-cordova'
 
 import latlngListType from './types/latlngList'
 import Path from './Path'

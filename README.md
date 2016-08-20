@@ -1,3 +1,5 @@
+NOTE: This is a clone of the original react-leaflet with a purpose of adding an additional CordovaSqlTileLayer.  Unfortunately we're waiting on a pull request for Leaflet for this to go through before a pull request for this against the original can be updated.  We will update this once we are hoping to use the original.
+
 # React-Leaflet [![Build Status](https://img.shields.io/travis/PaulLeCam/react-leaflet/master.svg)](https://travis-ci.org/PaulLeCam/react-leaflet) [![npm version](https://img.shields.io/npm/v/react-leaflet.svg)](https://www.npmjs.com/package/react-leaflet)
 
 React components for Leaflet maps.

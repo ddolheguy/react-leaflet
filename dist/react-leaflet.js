@@ -14454,7 +14454,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(_BaseTileLayer3.default);
 
 	CordovaSqlTileLayer.propTypes = {
-	  db: _react.PropTypes.object.isRequired
+	  db: _react.PropTypes.string.isRequired
 	};
 	exports.default = CordovaSqlTileLayer;
 

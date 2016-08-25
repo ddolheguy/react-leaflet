@@ -7,7 +7,7 @@ import BaseTileLayer from './BaseTileLayer'
 
 export default class CordovaSqlTileLayer extends BaseTileLayer {
   static propTypes = {
-    db: PropTypes.object.isRequired,
+    db: PropTypes.string.isRequired,
   };
 
   componentWillMount () {
